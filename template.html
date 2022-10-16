@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>fL0P GOAT</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="fL0P">
+<meta property="og:image" content="https://cdn.glitch.global/f3f23a67-1b2b-4f22-8c23-0c4a7b2f0c5a/chika%20doge.jpg?v=1659710555775" />
+<meta name="theme-color" content="#adffca">
+<link rel="stylesheet" href="template.css" />
+
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+if(typeof $ == 'undefined') alert("网络连接失败, 请重新启动!");
+
+$(document).ready(function(){
+    //alert();
+    //绑定菜单点击切换子页面
+    $("div.menubox").click(function(){
+        $("div.menubox").removeClass("current");
+        $("div.menuview").removeClass("current");
+        $(this).addClass("current");
+
+        var menuid = $(this).attr("menu");
+        $("div#"+menuid).addClass("current");
+    });
+
+    /*禁止文本Option和拖动*/
+    document.body.onselectstart = document.body.ondrag =function(){
+        return false;
+    }
+
+    $("input").blur(function(){
+        window.scroll(0,0); //文本框等输入完毕后页面自动滚动到顶部
+    });
+
+    //激活webkit的button:active
+    document.body.addEventListener('touchstart', function () {});
+
+    if(typeof h5gg!='undefined') {
+        //设置标题栏区域可拖动悬浮窗
+        setWindowDrag(0, 0, 400, 80);
+        //设置尺寸和位置
+        setWindowRect(60,60,300,300);
+    }
+});
+
+
+function buttonclick1(input)
+  {  h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x18F7238, "C0035FD6");//antiflash
+    }
+
+function buttonclick2(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x18F7238, "C0035FD6");//antiflash
+    }
+  function buttonclick3(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x18FAAD4, "C0035FD6");//antihe
+    }
+  function buttonclick4(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x18F7238, "C0035FD6");//antiflash
+   }
+
+
+  function buttonclick4(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x18F7238, "C0035FD6");//antiflash
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x18FAAD4, "C0035FD6");//antihe  
+  }
+    
+ function buttonclick5(input)
+{ setButtonImage("https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png"); //Set the icon of the floating button, you can pass in the http starting URL image or the base64 encoded DataURL image
+}
+  
+
+</script>
+
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body bgcolor="#2c2f33" style="margin:0;">
+<!--标题栏-->
+<div id="titleBar" style="background-color:#23272a; padding:5px; margin:0px;">
+  &nbsphack by fL0P                   <a href="template.html"><i class="fa fa-refresh"></i></a>
+
+</div>
+<!--用一个表格来布局左右两栏-->
+<table id="bodyView" width="100%" style="table-layout:fixed;height: calc(100% - 30px) ;">
+
+<tr>
+
+<td width="30%" style="vertical-align:top">
+
+<div class="container">
+  <div>
+    
+    <div class="menubox" menu="menu2">Hacks</div>    
+</div>
+  <div class="menubox" menu="menu3">Misc</div>
+  </div>
+</td>
+<td style="vertical-align:top" class="scrollbar">
+<div id="menu1" class="menuview current">
+<string> Mod by fL0P#5341</string>
+</div>
+<div id="menu2" class="menuview">
+    <button onclick="buttonclick1(this)">AntiFlash</button>
+    <p>
+     <button onclick="buttonclick2(this)">OFF AntiFlash</button>
+    <p>
+    <button onclick="buttonclick3(this)">AntiHE</button>
+    <p>
+     <button onclick="buttonclick4(this)">OFF AntiHE</button>
+</div>
+<div id="menu3" class="menuview">
+ <button onclick="buttonclick4(this)">OFF AllHacks</button>
+  <button onclick="buttonclick5(this)">Hide Icon</button>
+  <string>remember icon position</string>
+
+</div>
+
+
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
