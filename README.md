@@ -1,3 +1,4 @@
 # SO2HACKNONJB
-FIXED FOREVER
-standoff 2 legacy non-jb cheat using h5frida and h5gg
+1.FIXED FOREVER
+
+2. standoff 2 legacy non-jb cheat (another paste) using h5frida and h5gg
