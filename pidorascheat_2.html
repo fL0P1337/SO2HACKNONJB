@@ -1,0 +1,1002 @@
+
+<html>
+<head>
+<title>fL0P GOAT</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="fL0P">
+<meta property="og:image" content="https://cdn.glitch.global/f3f23a67-1b2b-4f22-8c23-0c4a7b2f0c5a/chika%20doge.jpg?v=1659710555775" />
+<meta name="theme-color" content="#adffca">
+<link rel="stylesheet" href="template.css" />
+<style>
+  html {
+    zoom:1.2;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #2c2f33;
+
+}
+
+
+
+* {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+
+    /* DebugMode:delete next line to show dashed border */
+    /*
+    border: 1px dashed gray;/**/
+
+}
+
+.container {
+  position: relative;
+  top: -3px;
+  background-color: #3a3e42;
+  height: 110%;
+  animation: transitionIn 1s;
+}
+
+*:not(input,checkbox,textarea) {
+    /*禁止文本选择*/
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   user-select: none; /* Non-prefixed version, currently */
+   outline: none;
+   -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    background-color: rgba(0,0,0,0);
+    height: 30px;
+    border-radius: 20px;
+}
+
+button {
+    height: 30px;
+    background-color: #E8E8E850;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+button:hover {
+  background-color: #8a8888;
+  border-radius: 15px;
+  transition: 0.9s;
+}
+
+button:active {
+     transform: translateY(2px);
+}
+
+input[type=radio]  {
+    width:20px;
+    height:20px;
+    margin-right:6px;
+    border:none;
+    outline-style:none;
+    -webkit-appearance:none;
+    vertical-align:middle;
+    border:1px solid #DDDDDDF0;
+    border-radius:50%;
+}
+input[type=radio]:checked {
+    border:6px solid #ffffff;
+    background:#FFFFFF;
+}
+
+input[type=checkbox]{
+ visibility: hidden;
+ vertical-align:middle; margin-bottom:2px;
+ cursor: pointer;
+ position: relative;
+ width: 24px;
+ height: 24px;
+}
+input[type=checkbox]::after{
+transition: 1s;
+ position: absolute;
+ top: 0;
+ margin-top:2px;
+ width: 14px; height: 14px;
+ border: 1px solid #EEEEEE;
+ border-radius: 5px;
+ background-color: rgba(0,0,0,0);
+ display: inline-block;
+ visibility: visible;
+ text-align: center;
+ content: ' ';
+}
+input[type=checkbox]:checked::after{
+ content: "✓";
+ border-color: #FFFFFF;
+ background-color: #686868;
+ font-size: 12px;
+ font-weight: bold;
+ border-radius: 5px;
+  transition: 1.5s;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sliderValue {
+  position: relative;
+  width: 100%;
+  background-color: #8a8a8a
+}
+
+
+input[type=range] {
+  -webkit-appearance: none;
+
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 15px;
+  width: 1px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+   height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  background-color: #656565;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -2.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+
+
+/* 滚动条整体部分 */
+.scrollbar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 5px; /* 纵向滚动条宽度 */
+    height: 5px;/* 横向滚动条高度 */
+    background-color: #F5F5F5; /* 滚动条整体背景，一般被覆盖着 */
+}
+/* 滚动条的轨道（里面装有Thumb） */
+.scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /* 滚动条轨道阴影 */
+    /*border-radius: 10px; /* 滚动条轨道圆角 */
+    background-color: #F5F5F5; /* 滚动条轨道背景 */
+}
+/* 滚动条里面的滑块 */
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 15px; /* 滚动条滑块圆角 */
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); /* 滚动条滑块阴影 */
+    background-color: #B8B8B8; /* 滚动条滑块颜色 */
+}
+
+.menubox {
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        text-align:center;
+        transition: 0.4s;
+}
+.menubox.current {
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    width: 70px;
+    transition: 1s;
+}
+
+
+.menuview {
+    display:none;
+
+}
+
+.menuview.current {
+    display:block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    animation: changePage 2s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes changePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+  </style>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+if(typeof $ == 'undefined') alert("网络连接失败, 请重新启动!");
+
+$(document).ready(function(){
+    //alert();
+    //绑定菜单点击切换子页面
+    $("div.menubox").click(function(){
+        $("div.menubox").removeClass("current");
+        $("div.menuview").removeClass("current");
+        $(this).addClass("current");
+
+        var menuid = $(this).attr("menu");
+        $("div#"+menuid).addClass("current");
+    });
+
+    /*禁止文本Option和拖动*/
+    document.body.onselectstart = document.body.ondrag =function(){
+        return false;
+    }
+
+    $("input").blur(function(){
+        window.scroll(0,0); //文本框等输入完毕后页面自动滚动到顶部
+    });
+
+    //激活webkit的button:active
+    document.body.addEventListener('touchstart', function () {});
+
+    if(typeof h5gg!='undefined') {
+        //设置标题栏区域可拖动悬浮窗
+        setWindowDrag(0, 0, 700, 80);
+        //设置尺寸和位置
+        setWindowRect(60,60,300,300);   
+    }
+});
+function hideiconON(input)
+{   setButtonImage("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Red_circle_frame_transparent.svg/2048px-Red_circle_frame_transparent.svg.png"); //Set the icon of the floating button, you can pass in the http starting URL image or the base64 encoded DataURL image
+}
+ function hideiconOFF(input)
+  {
+   setButtonImage("https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png");history
+  }
+  
+
+  function antiflashON(input)
+  {  h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C21FCC, "C0035FD6");//antiflash
+    }
+
+function antiflashOFF(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C21FCC, "C0035FD6");//antiflash
+    }
+  function antiheON(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C27348, "C0035FD6");//antihe
+    }
+  function antiheOFF(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework",  0x1C27348, "C0035FD6");//antihe
+   }
+
+
+  function OFFallhacks(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C21FCC, "C0035FD6");//antiflash
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C27348, "C0035FD6");//antihe  
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C15F88, "C0035FD6");//firerate
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C15E70, "C0035FD6");//norecoil
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C370F0, "C0035FD6");//fast_bomb
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C4F764, "00008052C0035FD6");//dont_return
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x19D8B00, "200080D2C0035FD6");//jump_hack
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x32D61F8, "200080D2C0035FD6");//jump_hack
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x19E04C8, "200080D2C0035FD6");//jump_hack
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFC6BC, "20008052C0035FD6");//buy_wherever
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFF0B4, "20008052C0035FD6");//buy_wherever
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C10430, "00F0271EC0035FD6");//wall_shot
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1D68FB8, "C0035FD6");//infinity_ammo
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C5200C, "00008052C0035FD6");//money_hack
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF54, "00008052C0035FD6");//plant_anywhere
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF7C, "00008052C0035FD6");//plant_anywhere
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BFBC, "00008052C0035FD6");//plant_anywhere
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1D00268, "00008052C0035FD6");//always_respawn
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1DBEC88, "00008052C0035FD6");//team_radar
+ DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3C528, "00008052C0035FD6");//fast_bomb
+  }
+  function firerateON(input)
+  {  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C15F88, "C0035FD6");//firerate
+  }
+   function firerateOFF(input)
+{  var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C15F88, "C0035FD6");//firerate
+}
+  function norecoilON(input)
+  {  h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C15E70, "C0035FD6");//norecoil
+   
+    }
+function norecoilOFF(input)
+  { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C15E70, "C0035FD6");//norecoil
+  }
+function fastbombON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C370F0, "c0035fd6");//fastbomb
+}
+function fastbombOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C370F0, "C0035FD6");//fast_bomb
+}
+function dontreturnON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C4F764, "00008052C0035FD6");//dont_return
+ }
+function dontreturnOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false; 
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C4F764, "00008052C0035FD6");//dont_return
+ }
+function buyanywhereON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFF0B4, "20008052C0035FD6");//buy_wherever
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C10430, "20008052C0035FD6");//buy_wherever
+ }
+function buyanywhereOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFF0B4, "20008052C0035FD6");//buy_wherever
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C10430, "20008052C0035FD6");//buy_wherever
+ }
+function jumphackON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x19D8B00, "200080D2C0035FD6");//jump_hack
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x32D61F8, "200080D2C0035FD6");//jump_hack
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x19E04C8, "200080D2C0035FD6");//jump_hack
+ }
+function jumphackOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x19D8B00, "200080D2C0035FD6");//jump_hack
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x32D61F8, "200080D2C0035FD6");//jump_hack
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x19E04C8, "200080D2C0035FD6");//jump_hack
+ }
+function wallshotON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C10430, "00F0271EC0035FD6");//wall_shot
+ }
+function wallshotOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C10430, "00F0271EC0035FD6");//wall_shot
+ }
+function moneyhackON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C5200C, "00008052C0035FD6");//money_hack  
+ }
+function moneyhackOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C5200C, "00008052C0035FD6");//money_hack
+ }
+  
+function infinityammoON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1D68FB8, "C0035FD6");//infinity_ammo 
+ }
+function infinityammoOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1D68FB8, "C0035FD6");//infinity_ammo 
+ }
+function plantanywhereON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF54, "200080D2C0035FD6");//plant_anywhere
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF7C, "200080D2C0035FD6");//plant_anywhere
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BFBC, "200080D2C0035FD6");//plant_anywhere 
+ }
+function plantanywhereOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF54, "200080D2C0035FD6");//plant_anywhere
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF7C, "200080D2C0035FD6");//plant_anywhere
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BFBC, "200080D2C0035FD6");//plant_anywhere 
+ }
+function buyanywhereON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFF0B4, "20008052C0035FD6");//buy_anywhere
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFC6BC, "20008052C0035FD6");//buy_anywhere  
+ } 
+function buyanywhereOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFF0B4, "20008052C0035FD6");//buy_anywhere
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1CFC6BC, "20008052C0035FD6");//buy_anywhere
+  
+ } 
+function alwaysrespawnON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1D00268, "200080D2C0035FD6");//always_respawn
+ }
+function alwaysrespawnOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1D00268, "200080D2C0035FD6");//always_respawn
+ }
+function fastplantON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3C528, "E003271EC0035FD6");//fast_plant
+ }
+function fastplantOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3C528, "E003271EC0035FD6");//fast_plant
+ }
+function plantanywhereON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF54, "200080D2C0035FD6");//plant_wherever
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF7C, "200080D2C0035FD6");//plant_wherever
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BFBC, "200080D2C0035FD6");//plant_wherever
+ }
+function plantanywhereOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF54, "200080D2C0035FD6");//plant_wherever
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BF7C, "200080D2C0035FD6");//plant_wherever
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1C3BFBC, "200080D2C0035FD6");//plant_wherever
+ }
+function teamradarON(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1DBEC88, "C0035FD6");//team_radar
+ }
+function teamradarOFF(input)
+ { h5gg.require(7.9);
+var h5frida=h5gg.loadPlugin("h5frida", "h5frida-15.1.24.dylib");
+if(!h5frida) throw "加载h5frida插件失败\n\nFailed to load h5frida plugin";
+
+function ActiveCodePatch(fpath, vaddr, bytes) {
+    if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+        var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+        alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-PatchFailed!\n" + result);return false;
+    } return true;
+}
+function DeactiveCodePatch(fpath, vaddr, bytes) {
+    return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+}
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x1DBEC88, "C0035FD6");//team_radar
+ }
+function skins(input)
+  {let oldskinid = prompt("Enter oldskin ID:");
+h5gg.searchNumber(oldskinid, 'I64', '0x00000000', '0x200000000');
+h5gg.getResults(100);
+let newskinid = prompt('Enter newskin ID:');
+h5gg.editAll(newskinid, 'I64');
+alert("Successfully!");
+h5gg.clearResults();}
+  
+  </script>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body bgcolor="#2c2f33" style="margin:0;">
+<!--标题栏-->
+<div id="titleBar" style="background-color:#23272a; padding:5px; margin:0px;">
+  &nbspmodded by fL0P#5341                <a href="template.html"><i class="fa fa-refresh"></i></a>
+
+</div>
+<!--用一个表格来布局左右两栏-->
+<table id="bodyView" width="100%" style="table-layout:fixed;height: calc(100% - 30px) ;">
+
+<tr>
+
+<td width="30%" style="vertical-align:top">
+
+<div class="container">
+  <div>
+    
+    <div class="menubox" menu="menu2">Cheats</div>    
+</div>
+  <div class="menubox" menu="menu5">Bomb 
+  </div>
+  <div class="menubox" menu="menu4">Grenade
+  </div>
+  <div class="menubox" menu="menu6">Skins</div>
+  <div class="menubox" menu="menu7">Misc</div>
+ 
+</td>
+<td style="vertical-align:top" class="scrollbar">
+<div id="menu1" class="menuview current">
+<string>Leontap iPA By fL0P#5341</string>
+</div>
+<div id="menu4" class="menuview">
+   <p>AntiFlash</p>
+  <label><input name="radio-group1" type="radio" value="1" checked onclick="antiflashON(this)" />ON</label>
+  <label><input name="radio-group1" type="radio" value="1" checked onclick="antiflashOFF(this)" />OFF</label>     
+    <p>AntiHE</p>
+  <label><input name="radio-group2" type="radio" value="1" checked onclick="antiheON(this)" />ON</label>
+  <label><input name="radio-group2" type="radio" value="1" checked onclick="antiheOFF(this)" />OFF</label>
+  </div>
+  <div id="menu2" class="menuview">
+    <p>FireRate</p>
+  <label><input name="radio-group3" type="radio" value="1" checked onclick="firerateON(this)" />ON</label>
+  <label><input name="radio-group3" type="radio" value="1" checked onclick="firerateOFF(this)" />OFF</label>
+ <p>NoRecoil</p>
+  <label><input name="radio-group8" type="radio" value="1" checked onclick="norecoilON(this)" />ON</label>
+  <label><input name="radio-group8" type="radio" value="1" checked onclick="norecoilOFF(this)" />OFF</label>
+<p>Dont Return To Spawn</p>
+  <label><input name="radio-group10" type="radio" value="1" checked onclick="dontreturnON(this)" />ON</label>
+  <label><input name="radio-group10" type="radio" value="1" checked onclick="dontreturnOFF(this)" />OFF</label>
+<p>Buy Anywhere</p>
+  <label><input name="radio-group11" type="radio" value="1" checked onclick="buyanywhereON(this)" />ON</label>
+  <label><input name="radio-group11" type="radio" value="1" checked onclick="buyanywhereOFF(this)" />OFF</label>
+<p>Jump Hack</p>
+  <label><input name="radio-group12" type="radio" value="1" checked onclick="jumphackON(this)" />ON</label>
+  <label><input name="radio-group12" type="radio" value="1" checked onclick="jumphackOFF(this)" />OFF</label>
+<p>Always Respawn</p>
+  <label><input name="radio-group18" type="radio" value="1" checked onclick="alwaysrespawnON(this)" />ON</label>
+  <label><input name="radio-group18" type="radio" value="1" checked onclick="alwaysrespawnOFF(this)" />OFF</label>
+<p>Team Radar (buggy)</p>
+  <label><input name="radio-group17" type="radio" value="1" checked onclick="teamradarON(this)" />ON</label>
+  <label><input name="radio-group17" type="radio" value="1" checked onclick="teamradarOFF(this)" />OFF</label>
+  <p> Wallshot</p>
+    <label><input name="radio-group13" type="radio" value="1" checked onclick="wallshotON(this)" />ON</label>
+  <label><input name="radio-group13" type="radio" value="1" checked onclick="wallshotOFF(this)" />OFF</label>
+<p>Money Hack</p>
+  <label><input name="radio-group14" type="radio" value="1" checked onclick="moneyhackON(this)" />ON</label>
+  <label><input name="radio-group14" type="radio" value="1" checked onclick="moneyhackOFF(this)" />OFF</label>
+<p>Inifnity Ammo</p>
+  <label><input name="radio-group15" type="radio" value="1" checked onclick="infinityammoON(this)" />ON</label>
+  <label><input name="radio-group15" type="radio" value="1" checked onclick="infinityammoOFF(this)" />OFF</label>
+</div>
+<div id="menu7" class="menuview">
+ <button onclick="OFFallhacks(this)">OFF AllHacks</button>
+ <p>Hide icon</p>
+  <label><input name="radio-group4" type="radio" value="1" checked onclick="hideiconON(this)" />ON</label>
+  <label><input name="radio-group4" type="radio" value="1" checked onclick="hideiconOFF(this)" />OFF</label>
+</div>
+<div id="menu6" class="menuview">
+<p>Skinchanger</p>
+ <button onclick="skins(this)">Skins!</button>
+</div>
+<div>
+<div id="menu5" class="menuview">
+   <p>FastBomb</p>
+  <label><input name="radio-group16" type="radio" value="1" checked onclick="fastbombON(this)" />ON</label>
+  <label><input name="radio-group16" type="radio" value="1" checked onclick="fastbombOFF(this)" />OFF</label>  
+ <p>Plant Anywhere</p>
+  <label><input name="radio-group9" type="radio" value="1" checked onclick="plantanywhereON(this)" />ON</label>
+  <label><input name="radio-group9" type="radio" value="1" checked onclick="plantanywhereOFF(this)" />OFF</label>  
+  <p>Fast Plant</p>
+  <label><input name="radio-group19" type="radio" value="1" checked onclick="fastplantON(this)" />ON</label>
+  <label><input name="radio-group19" type="radio" value="1" checked onclick="fastplantOFF(this)" />OFF</label>  
+  
+</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
+
+
